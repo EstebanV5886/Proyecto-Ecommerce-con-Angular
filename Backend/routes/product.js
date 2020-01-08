@@ -1,14 +1,14 @@
 'use strict'
 
 var express = require('express');
-var ProductController = require('../controllers/product');
+var CartController = require('../controllers/cart');
 
 var router = express.Router();
 
 //Rutas de prueba
-router.get('/test-de-controlador', ProductController.test);
+router.get('/test-de-controlador', CartController.test);
 
 //Rutas para productos
-router.post('/addToCart', ProductController.addToCart);
+router.get('/add-to-cart/:id', CartController.addToCart);
 
 module.exports = router;

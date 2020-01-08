@@ -1,0 +1,124 @@
+.carousel-item {
+    height: 85vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 30px;
+  }
+
+  #img-carrito{
+    width: 30px;
+    color: brown;
+  }
+
+  #img-carousel-uno{
+    background-image: url('/assets/images/cafe_sign_signboard_116510_1280x720.png');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 87%;   
+  }
+
+  #img-carousel-dos{
+    background-image: url('/assets/images/cafe_cup_coffee_hot_mood_table_chairs_furniture_shade_54328_1920x1080.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 85%;
+  }
+
+  #img-carousel-tres{
+    background-image: url('/assets/images/Drinks_Coffee_Cinnamon_Black_background_Cup_Grain_519038_1920x1080.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 72%;
+  }
+
+  /*Estilos para los productos*/
+
+  .page-header h2{
+  font-family: 'Open Sans' !important;
+  font-size: 30px !important;
+  }
+
+  .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid#eee;
+    color: #e6a756
+  }
+
+  .subheader{
+    font-size: 38px;
+    padding-bottom: 5px;
+    color: yellow;
+}
+
+.product-block-description {
+    height: 90px;
+    overflow: hidden;
+}
+
+.d-md-block {
+  display: block !important;
+}
+
+.caption p{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.price-mob {
+  font-size: 0.95rem;
+  color: #e6a756;
+}
+
+.product-block{
+  width: 80%;
+}
+
+.addToCart{
+  color:#e6a756 !important;
+}
+
+.img-contenedor img {
+  -webkit-transition:all .9s ease; /* Safari y Chrome */
+  -moz-transition:all .9s ease; /* Firefox */
+  -o-transition:all .9s ease; /* IE 9 */
+  -ms-transition:all .9s ease; /* Opera */
+  width:100%;
+  }
+
+  .img-contenedor:hover img {
+  -webkit-transform:scale(1.25);
+  -moz-transform:scale(1.25);
+  -ms-transform:scale(1.25);
+  -o-transform:scale(1.25);
+  transform:scale(1.25);
+  }
+
+  .img-contenedor {/*Ancho y altura son modificables al requerimiento de cada uno*/
+  overflow:hidden;
+  }
+
+  /*Error Page*/
+
+  .masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+

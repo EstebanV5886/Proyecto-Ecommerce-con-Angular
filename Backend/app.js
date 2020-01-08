@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 //Se cargan modulos de Node para crear servidor
 const express = require('express');
 const bodyParser = require('body-parser');
