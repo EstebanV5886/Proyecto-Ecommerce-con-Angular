@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { ProductosDescripcionComponent } from './components/productos-descripcion/productos-descripcion.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'nosotros', component: NosotrosComponent},
     {path: 'productos', component: ProductosComponent},
+    {path: 'productos-descripcion', component: ProductosDescripcionComponent},
     {path: 'tienda', component: TiendaComponent},
     {path: 'carrito', component: CarritoComponent},
     {path: '**', component: ErrorPageComponent}

@@ -62,9 +62,18 @@
 }
 
 .product-block-description {
-    height: 90px;
+    height: 90px; 
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
+
+/*.greetings*/
+/*{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: Ellipsis; /* This is where the magic happens*/
+/*}*/
 
 .d-md-block {
   display: block !important;

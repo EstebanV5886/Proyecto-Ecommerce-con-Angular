@@ -13,6 +13,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { from } from 'rxjs';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { ProductosDescripcionComponent } from './components/productos-descripcion/productos-descripcion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     ProductosComponent,
     TiendaComponent,
     CarritoComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ProductosDescripcionComponent
   ],
   imports: [
     BrowserModule,

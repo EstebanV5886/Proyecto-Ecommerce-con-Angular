@@ -1,3 +1,4 @@
+<!--Middle Section-->
 <section class="page-section">
     <div class="container">
       <div class="product-item">
@@ -51,7 +52,7 @@
             </h2>
           </div>
         </div>
-        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/images/products-03.jpg" alt="">
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/images/products-03.jpg" alt="Cafe loco">
         <div class="product-item-description d-flex mr-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">Viajar por el mundo en busca de café de la mejor calidad es algo de lo que enorgullecerse. Cuando nos visite, siempre encontrará nuevas mezclas de todo el mundo, principalmente de regiones de América Central y del Sur. Vendemos nuestras mezclas en pequeñas y grandes cantidades a granel. Por favor visítenos en persona para más detalles.</p>
@@ -60,3 +61,34 @@
       </div>
     </div>
   </section>
+<!--End Middle section-->
+
+<!--Show products-->
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-12">
+      <h2 class="page-header">{{titulo}}</h2>
+    </div>   
+
+  <div class="col-md-3 col-6 product-block img-contenedor" *ngFor="let producto of productos">
+    <a [routerLink]="['/#']">
+        <img class="img-fluid img-portfolio img-hover mb-3" src="{{producto.image}}" alt="{{producto.descripcion}}">
+      </a>
+    <div class="caption">
+      <h3>
+        <a [routerLink]="['/productos-descripcion']">{{producto.nombre}}</a>
+      </h3>
+      <div class="price-mob">U$S {{producto.precio}}
+          <a class="btn btn-outline-warning ml-2" [routerLink]="['/carrito']">Añade al carrito</a>
+      </div>    
+      <div class="clearfix"></div>
+      <p class="product-block-description d-none d-md-block greetings">{{producto.descripcion}}</p>
+    </div>
+  </div>
+
+ </div>
+
+</div>
