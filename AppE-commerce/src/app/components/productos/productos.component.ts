@@ -14,10 +14,10 @@ export class ProductosComponent implements OnInit {
   public productos:Array<Producto>;
 
   constructor(
-    private _ProductoService: ProductoService
+    private _productoService: ProductoService
   ) {
     this.titulo = "Últimos Productos"
-    this.productos = this._ProductoService.getProductos();
+    this.productos = this._productoService.getProductos();
    }
 
   ngOnInit() {

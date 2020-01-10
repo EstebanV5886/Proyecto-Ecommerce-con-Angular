@@ -2,10 +2,11 @@ export class Producto{
 
     constructor(
 
-        public nombre: string,
+        public _id: string,
         public image: string,
-        public descripcion: string,
-        public precio: number
+        public title: string,
+        public description: string,
+        public price: number
 
     ){
 
