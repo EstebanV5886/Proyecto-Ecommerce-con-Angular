@@ -7,17 +7,17 @@
 
     <div class="col-md-3 col-6 product-block img-contenedor">
       <a [routerLink]="['/productos']">
-          <img class="img-fluid img-portfolio img-hover mb-3" src="{{producto.image}}" alt="{{producto.description}}">
+        <img class="img-fluid img-portfolio img-hover mb-3" src="{{producto?.image}}" alt="{{producto?.description}}">
         </a>
       <div class="caption">
         <h3>
-          <a [routerLink]="['/productos']">{{producto.title}}</a>
+          <a [routerLink]="['/productos']">{{producto?.title}}</a>
         </h3>
-       <div class="price-mob">U$S {{producto.price}}
+       <div class="price-mob">U$S {{producto?.price}}
             <a class="btn btn-outline-warning ml-2" [routerLink]="['/carrito']">Añade al carrito</a>
         </div>    
         <div class="clearfix"></div>
-        <p class="product-block-description d-none d-md-block greetings">{{producto.description}}</p>
+        <p class="product-block-description d-none d-md-block greetings">{{producto?.description}}</p>
       </div>
     </div>
 

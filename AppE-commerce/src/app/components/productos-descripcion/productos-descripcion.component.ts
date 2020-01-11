@@ -13,7 +13,7 @@ import { Global } from '../../services/global';
 export class ProductosDescripcionComponent implements OnInit {
 
   public titulo: string;
-  public producto: Producto;
+  public producto:Producto;
   public url: string;
 
   constructor(
