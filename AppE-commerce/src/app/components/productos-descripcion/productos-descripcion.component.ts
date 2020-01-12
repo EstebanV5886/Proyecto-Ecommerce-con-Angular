@@ -32,10 +32,11 @@ export class ProductosDescripcionComponent implements OnInit {
 
       this._productoService.getProducto(id).subscribe(
         response => {
-          if(response.producto){
-            this.producto = response.producto;
+          if(response.product){
+            console.log(response);
+            this.producto = response.product;
           }else{
-            this._router.navigate(['/home']);
+            //this._router.navigate(['/home']);
           }
           
         },

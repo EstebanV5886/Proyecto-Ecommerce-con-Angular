@@ -74,7 +74,7 @@
     </div>   
 
   <div class="col-md-3 col-6 product-block img-contenedor" *ngFor="let producto of productos">
-    <a [routerLink]="['/#']">
+    <a [routerLink]="['/productos-descripcion', producto._id]">
         <img class="img-fluid img-portfolio img-hover mb-3" src="{{url + 'get-image/' + producto.image}}" alt="{{producto.description}}">
       </a>
     <div class="caption">

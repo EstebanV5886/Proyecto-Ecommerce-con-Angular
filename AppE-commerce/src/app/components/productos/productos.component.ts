@@ -25,8 +25,8 @@ export class ProductosComponent implements OnInit {
   ngOnInit() {
     this._productoService.getProductos().subscribe(
       response => {
-        if(response.productos){
-          this.productos = response.productos;
+        if(response.products){
+          this.productos = response.products;
         }else{
 
         }
