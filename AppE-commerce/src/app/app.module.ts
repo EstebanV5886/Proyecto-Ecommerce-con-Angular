@@ -15,6 +15,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { from } from 'rxjs';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ProductosDescripcionComponent } from './components/productos-descripcion/productos-descripcion.component';
+import { ProductosAlertasComponent } from './components/productos-alertas/productos-alertas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProductosDescripcionComponent } from './components/productos-descripcio
     TiendaComponent,
     CarritoComponent,
     ErrorPageComponent,
-    ProductosDescripcionComponent
+    ProductosDescripcionComponent,
+    ProductosAlertasComponent
   ],
   imports: [
     BrowserModule,

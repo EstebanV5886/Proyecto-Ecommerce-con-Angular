@@ -64,16 +64,16 @@
 .product-block-description {
     height: 90px; 
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    /*white-space: nowrap;
+    text-overflow: ellipsis;*/
 }
 
-/*.greetings*/
-/*{
+.greetings
+  {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: Ellipsis; /* This is where the magic happens*/
-/*}*/
+}
 
 .d-md-block {
   display: block !important;
@@ -127,6 +127,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.center-description-product{
+  margin: auto;
+}
+
+.title-description-product{
+  color: #e6a756;
 }
 
 

@@ -88,6 +88,10 @@
       <p class="product-block-description d-none d-md-block greetings">{{producto.description}}</p>
     </div>
 
+    <div class="container">
+    <app-productos-alertas (notify)="onNotify()" [producto]="producto"></app-productos-alertas> 
+    </div>
+
   </div>
 
  </div>

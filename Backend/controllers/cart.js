@@ -8,7 +8,7 @@ const User = require('../models/user');
 var express = require('express');
 var router = express.Router();
 
-var controller = {
+var CartController = {
 
     test:(req, res) => {
         return res.status(200).send({
@@ -81,4 +81,4 @@ var controller = {
 
 };//End Controller
 
-module.exports = controller;
+module.exports = CartController;

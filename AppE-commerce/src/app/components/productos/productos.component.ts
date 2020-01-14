@@ -37,4 +37,8 @@ export class ProductosComponent implements OnInit {
     )
   }
 
+  onNotify(){
+    window.alert('Seras notificado cuando el producto se compre');
+  }
+
 }
