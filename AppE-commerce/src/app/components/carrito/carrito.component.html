@@ -1,1 +1,12 @@
-<p>carrito works!</p>
+<h3 class="text-white text-center">Cart</h3>
+
+<!--<div *ngIf="items">
+<p class="text-white text-center">Cantidad: {{items["totalQty"]}}</p>
+<p class="text-white text-center">Precio: {{items["totalPrice"]}}</p>
+</div>--> 
+
+<div *ngFor="let item of items | values">
+    <p class="text-white text-center">{{items["totalQty"]}}</p>
+    <p class="text-white text-center">{{items["totalPrice"]}}</p>
+    <p class="text-white text-center">{{items["items"]}}</p>    
+</div>

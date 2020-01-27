@@ -4,6 +4,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 //Ejecutar Express (http)
 var app = express();
@@ -15,6 +17,15 @@ var product_routes = require('./routes/product');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use(session({
+    secret:'mysupersecret', 
+    resave: false, 
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection
+    }),
+    cookie:{maxAge: 180 * 60 * 1000}
+}));
 
 //CORS
 app.use((req, res, next) => {
@@ -22,6 +33,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    //res.locals.session = req.session;
     next();
 });
 

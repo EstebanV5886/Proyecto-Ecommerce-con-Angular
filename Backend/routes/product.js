@@ -1,16 +1,15 @@
 'use strict'
 
 const express = require('express');
-const CartController = require('../controllers/cart');
-const ProductController = require('../controllers/product');
-
+let Product = require('../models/product');
+let ProductController = require('../controllers/product');
+let CartController = require('../controllers/cart');    
 var router = express.Router();
 
 var multipart = require('connect-multiparty');
 var md_upload = multipart({uploadDir: './uploads/products'});
 
 //Rutas de prueba
-router.get('/test-de-controlador', CartController.test);
 
 //Rutas para productos
 router.get('/product-details', ProductController.test);//Ruta de prueba

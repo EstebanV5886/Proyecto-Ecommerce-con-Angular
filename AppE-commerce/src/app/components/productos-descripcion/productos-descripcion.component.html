@@ -60,7 +60,7 @@
             </div>
           </div>
           <div>
-            <a class="btn btn-outline-warning mb-4" (click)="addToCart(producto.id)" [routerLink]="['/carrito']">Añade
+            <a class="btn btn-outline-warning mb-4" (click)="addProduct(producto)" [routerLink]="['/carrito/' + producto._id]">Añade
               al carrito</a>
           </div>
         </div>

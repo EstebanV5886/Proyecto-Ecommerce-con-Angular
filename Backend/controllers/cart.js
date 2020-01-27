@@ -10,75 +10,32 @@ var router = express.Router();
 
 var CartController = {
 
-    test:(req, res) => {
-        return res.status(200).send({
-            status:'success',
-            message:'accion de prueba'
-        });
-    },
-
-    addToCart:(req, res, next) => {
-
-        let functionCart = function(oldCart){
-            this.items = oldCart.items || {};
-            this.totalQty = oldCart.totalQty || 0;
-            this.totalPrice = oldCart.totalPrice || 0;
-        }
-
-        this.add = (item, id) => {
-            let storedItem = this.items[id];
-            if (!storedItem) {
-                storedItem = this.items[id] = {
-                    item: item,
-                    qty: 0,
-                    price: 0
-                };
-            }
-            storedItem.qty++;
-            storedItem.price = storedItem.item.price * storedItem.qty;
-            this.totalQty++;
-            this.totalPrice += storedItem.item.price;
-        }
-
-        this.reduceByOne = id => {
-            this.items[id].qty--;
-            this.items[id].price -= this.items[id].item.price;
-            this.totalQty--;
-            this.totalPrice -= this.items[id].item.price;
+    addToCart:(req, res) => {
     
-            if (this.items[id].qty <= 0) {
-                delete this.items[id];
-            }
-        }
+        let productId = req.params.id;
+        console.log(productId);
+        var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
+        console.log(cart);
+        Product.findById(productId, (err, product) => {    
+            if(err){
+                 return res.status(500).send({
+                     status:'error',
+                    message:'Dude, we have a problem here!'
+                 });
+             }
+             
+             cart.add(product, product.id);
+             req.session.cart = cart; 
 
-        this.removeItem = function (id) {
-            this.totalQty -= this.items[id].qty;
-            this.totalPrice -= this.items[id].price;
-            delete this.items[id];
-        };
-
-        this.generateArray = () => {
-            let arr = [];
-            for (const id in this.items) {
-                arr.push(this.items[id]);
-            }
-            return arr;
-        }
-    
-        if(functionCart){
-            res.status(200).send({
+             return res.status(200).send({
                 status:'success',
-                message:'Exito'
-            });
-        }else{
-            res.status(500).send({
-                status:'error',
-                message:'Error'
-            });
-        }
-
+                cart
+             });
+                            
+         });
     }
 
+    
 };//End Controller
 
 module.exports = CartController;

@@ -1,48 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { CarritoService } from '../../services/carrito.services';
-import { Global } from '../../services/global';
-import { Producto } from '../../models/producto';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { CarritoService } from "../../services/carrito.services";
+import { Global } from "../../services/global";
+import { Cart } from '../../models/cart';
+import { Producto } from "../../models/producto";
+import { Router, ActivatedRoute, Params } from "@angular/router";
+import { ValuesPipe } from '../../pipes/values.pipe';
+
 
 @Component({
-  selector: 'app-carrito',
-  templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.css'],
-  providers:[CarritoService]
+  selector: "app-carrito",
+  templateUrl: "./carrito.component.html",
+  styleUrls: ["./carrito.component.css"],
+  providers: [CarritoService]
 })
 export class CarritoComponent implements OnInit {
 
-  public url:string;
-  public items:Array<Producto>;
+  public url: string;
+  public items: Producto[] = [];
 
   constructor(
     private _carritoService: CarritoService,
-    private _route: ActivatedRoute
-
+    private _route: ActivatedRoute,
   ) {
     this.url = Global.url;
-   }
+  }
 
-  ngOnInit()
-    {
+  ngOnInit() {
 
-      this._route.params.subscribe(params => {
-        let id = params['id'];
-
+    this._route.params.subscribe(params => {
+      var id = params['id'];
       this._carritoService.getItems(id).subscribe(
-        (response: { items: Producto[]; }) => {
-          if(response.items){
-            this.items = response.items;
-          }else{
-  
+        response => {
+          if (response.cart) {
+            console.log(this.items = response.cart);
           }
-        },
+      },
         (error: any) => {
           console.log(error);
         }
-      ) 
+      );
+    });
+    
+  }
 
-      });
+  addProduct(item: Producto){
+    this._carritoService.addToCart(item);
   }
 
 }

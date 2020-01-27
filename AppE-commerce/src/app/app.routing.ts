@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     {path: 'productos', component: ProductosComponent},
     {path: 'productos-descripcion/:id', component: ProductosDescripcionComponent},
     {path: 'tienda', component: TiendaComponent},
-    {path: 'carrito', component: CarritoComponent},
+    {path: 'carrito/:id', component: CarritoComponent},
     {path: '**', component: ErrorPageComponent}
 ];
 
