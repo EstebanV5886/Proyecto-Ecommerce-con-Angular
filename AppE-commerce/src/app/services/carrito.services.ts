@@ -19,23 +19,10 @@ export class CarritoService{
         this.url = Global.url;
     }
 
-      addToCart(producto: Producto){
-        this.subject.next([...this.itemsCarrito, producto]);
+      addToCart(product: Producto){
+        this.subject.next([...this.itemsCarrito, product]);
       }
-
-
-       /*getItems():Cart[]{
-
-        if(localStorage.getItem('items') === null){
-          this.items = [];
-        }else{
-          console.log(this.items = JSON.parse(localStorage.getItem('items')));
-        }
-        return this.items
-
-      }*/
      
-
       removeItem(item: Producto){
         for (let i = 0; this.itemsCarrito.length; i++){
            if(item == this.itemsCarrito[i]){

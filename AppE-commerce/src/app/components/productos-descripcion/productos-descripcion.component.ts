@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { ProductoService } from '../../services/producto.services';
 import { CarritoService } from '../../services/carrito.services';
@@ -26,7 +26,7 @@ export class ProductosDescripcionComponent implements OnInit {
   private carts: Cart[] = [];
   private total = 0;
 
-  @Output() productAddded = new EventEmitter<Cart>();
+  @Input() productAddded: Cart;
   
   constructor(
     private _productoService: ProductoService,

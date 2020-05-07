@@ -31,7 +31,7 @@ export class CarritoComponent implements OnInit {
       var id = params['id'];
       this._carritoService.getItems(id).subscribe(
         response => {
-          if (response.cart) {
+          if (response) {
             console.log(this.items = response.cart);
           }
       },
@@ -41,7 +41,7 @@ export class CarritoComponent implements OnInit {
       );
     });
     
-  }
+}
 
   addProduct(item: Producto){
     this._carritoService.addToCart(item);
