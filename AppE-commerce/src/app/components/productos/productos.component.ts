@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Producto } from "../../models/producto";
 import { ProductoService } from '../../services/producto.services';
 import { Global } from '../../services/global';
+import { CarritoService } from '../../services/carrito.services';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css'],
-  providers: [ProductoService]
+  providers: [ProductoService, CarritoService]
 })
 export class ProductosComponent implements OnInit {
 
@@ -16,7 +17,7 @@ export class ProductosComponent implements OnInit {
   public productos:Array<Producto>;
 
   constructor(
-    private _productoService: ProductoService
+    private _productoService: ProductoService, public carritoService: CarritoService
   ) {
     this.titulo = "Últimos Productos"
     this.url = Global.url;
@@ -39,6 +40,14 @@ export class ProductosComponent implements OnInit {
 
   onNotify(){
     window.alert('Seras notificado cuando el producto se compre');
+  }
+
+  addToCart(productoId){
+    this.carritoService.getItems(productoId).subscribe(
+      res =>{
+        console.log(res);
+      }
+    )
   }
 
 }
