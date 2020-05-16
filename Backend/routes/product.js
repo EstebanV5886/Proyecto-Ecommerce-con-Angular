@@ -3,7 +3,8 @@
 const express = require('express');
 let Product = require('../models/product');
 let ProductController = require('../controllers/product');
-let CartController = require('../controllers/cart');    
+let CartController = require('../controllers/cart');
+let contactForm = require('../controllers/contactForm');   
 var router = express.Router();
 
 var multipart = require('connect-multiparty');
@@ -22,5 +23,10 @@ router.post('/upload-image/:id', md_upload, ProductController.upload);
 router.get('/get-image/:image', ProductController.getImage);
 router.get('/search/:search', ProductController.search);
 router.get('/add-to-cart/:id', CartController.addToCart);
+router.post('/contact-form', (req, res) => {
+    contactForm(req.body);
+    console.log(contactForm);
+    res.status(200).send();
+})
 
 module.exports = router;

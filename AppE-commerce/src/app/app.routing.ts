@@ -11,6 +11,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { ProductosDescripcionComponent } from './components/productos-descripcion/productos-descripcion.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component'
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 //Array de rutas - Configuracion de rutas que voy a crear
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     {path: 'productos-descripcion/:id', component: ProductosDescripcionComponent},
     {path: 'tienda', component: TiendaComponent},
     {path: 'carrito/:id', component: CarritoComponent},
+    {path: 'contactanos', component: ContactUsComponent},
     {path: '**', component: ErrorPageComponent}
 ];
 

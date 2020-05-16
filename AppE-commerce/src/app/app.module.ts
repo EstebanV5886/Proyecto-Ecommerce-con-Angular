@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,7 +18,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { ProductosDescripcionComponent } from './components/productos-descripcion/productos-descripcion.component';
 import { ProductosAlertasComponent } from './components/productos-alertas/productos-alertas.component';
 import { ValuesPipe } from './pipes/values.pipe';
-
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,13 +36,16 @@ import { ValuesPipe } from './pipes/values.pipe';
     ErrorPageComponent,
     ProductosDescripcionComponent,
     ProductosAlertasComponent,
-    ValuesPipe
+    ValuesPipe,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
